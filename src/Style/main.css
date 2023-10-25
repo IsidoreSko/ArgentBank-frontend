@@ -236,7 +236,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Pour &viter la barre avant le Footer: */
+/* Pour éviter la barre avant le Footer: */
 #without-line {
   margin-bottom: 0px;
 }
