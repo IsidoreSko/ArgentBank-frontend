@@ -1,8 +1,8 @@
 import React from "react";
 
-function account({ title, amount, description }) {
+function account({ id, title, amount, description }) {
   return (
-    <section className="account">
+    <section className="account" id={id}>
       <div className="account-content-wrapper">
         <h3 className="account-title">{title}</h3>
         <p className="account-amount">{amount}</p>

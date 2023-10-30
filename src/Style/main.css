@@ -19,7 +19,7 @@ body {
 
 .bg-dark {
   background-color: #12002b;
-  /* Pour avoir l'espace identique entre le header et le main sur chaque page: */
+  /* Pour avoir l'espace identique entre le "header" et le "main" sur chaque page: */
   margin-top: 3rem;
 }
 
@@ -46,7 +46,8 @@ body {
 
 .main-nav a {
   font-weight: bold;
-  color: #2c3e50;
+  /* color: #2c3e50; */
+  color: rgb(0, 85, 43);
 }
 
 .main-nav a.router-link-exact-active {
@@ -55,6 +56,17 @@ body {
 
 .main-nav-item {
   text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.fa {
+  font-weight: bold;
+  color: #42b983;
+  font-size: 20px;
+}
+
+/* Ajout d'un margin-right à l'icone "user": */
+.fa-user-circle {
   margin-right: 0.5rem;
 }
 
@@ -73,7 +85,6 @@ body {
 }
 
 .hero {
-  /* background-image: url("../Assets/Images/argentBankLogo.png"); */
   /* Changement du background de la bannière: */
   background-image: url("../Assets/Images/bank-tree.jpeg");
   background-position: 0 -50px;
@@ -209,6 +220,12 @@ body {
   font-size: 1.2rem;
 }
 
+/* Message d'erreur lors de la soumission du formulaire: */
+.form-error-message {
+  color: red;
+  font-weight: 600;
+}
+
 .footer {
   display: flex;
   justify-content: center;
@@ -219,6 +236,8 @@ body {
 .footer-text {
   margin: 0;
   padding: 0;
+  color: rgb(0, 85, 43);
+  font-weight: 600;
 }
 
 .account {
@@ -233,12 +252,7 @@ body {
   padding: 1.5rem;
   box-sizing: border-box;
   text-align: left;
-  margin-bottom: 2rem;
-}
-
-/* Pour éviter la barre avant le Footer: */
-#without-line {
-  margin-bottom: 0px;
+  margin-top: 2rem;
 }
 
 .account-amount {
@@ -274,6 +288,7 @@ body {
 .header {
   color: #fff;
   margin-bottom: 2rem;
+  padding-top: 1rem;
 }
 
 .transaction-button {
@@ -311,7 +326,12 @@ body {
 }
 
 .error404 {
-  font-size: 100px;
+  font-size: 85px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  @media (max-width: 450px) {
+    font-size: 80px;
+  }
 }
 
 .error-message {
@@ -325,4 +345,9 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #2c3e50;
+}
+
+/* Icone du message d'error: */
+.icon-error {
+  height: 90px;
 }
