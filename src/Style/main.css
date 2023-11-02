@@ -18,6 +18,7 @@ body {
 }
 
 .bg-dark {
+  background-color: white;
   background-color: #12002b;
   /* Pour avoir l'espace identique entre le "header" et le "main" sur chaque page: */
   margin-top: 3rem;
@@ -46,7 +47,6 @@ body {
 
 .main-nav a {
   font-weight: bold;
-  /* color: #2c3e50; */
   color: rgb(0, 85, 43);
 }
 
@@ -86,7 +86,7 @@ body {
 
 .hero {
   /* Changement du background de la bannière: */
-  background-image: url("../Assets/Images/bank-tree.jpeg");
+  background-image: url("../Assets/Images/bank-tree.webp");
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -181,6 +181,8 @@ body {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  /* Rajout: */
+  cursor: pointer;
 }
 
 .sign-in-content {
@@ -202,6 +204,8 @@ body {
 
 .input-remember label {
   margin-left: 0.25rem;
+  /* Rajout: */
+  cursor: pointer;
 }
 
 .input-wrapper {
@@ -224,6 +228,7 @@ body {
 .form-error-message {
   color: red;
   font-weight: 600;
+  margin-top: 1rem;
 }
 
 .footer {
@@ -286,7 +291,7 @@ body {
 }
 
 .header {
-  color: #fff;
+  color: white;
   margin-bottom: 2rem;
   padding-top: 1rem;
 }
@@ -301,6 +306,8 @@ body {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  /* Rajout: */
+  cursor: pointer;
 }
 
 @media (min-width: 720px) {
@@ -350,4 +357,44 @@ body {
 /* Icone du message d'error: */
 .icon-error {
   height: 90px;
+}
+
+/* Concernant la section "welcome" ou du formulaire de la page "User": */
+.welcome-or-form {
+  padding-top: 10px;
+  color: white;
+}
+
+/* Au sujet du formulaire pour changer l'userName: */
+.username {
+  width: 6rem;
+  height: 1.3rem;
+  color: black;
+}
+
+.input-edit {
+  margin-bottom: 1rem;
+}
+
+.edit-button-username {
+  width: 7.5rem;
+  height: 2.4rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-change {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon-param {
+  height: 20px;
+  width: 20;
+  padding-right: 10px;
+  margin: auto;
+  vertical-align: middle;
+  color: #12002b;
 }

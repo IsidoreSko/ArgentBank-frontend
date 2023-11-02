@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import iconErrorRed from "../Assets/Images/icon-error.png";
+import iconErrorRed from "../Assets/Images/icon-error.webp";
 
 function Error() {
   return (

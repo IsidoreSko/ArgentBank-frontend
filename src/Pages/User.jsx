@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Account from "../Components/Account";
 import Header from "../Layout/Header";
+
 import { useSelector, useDispatch } from "react-redux";
-// import { Link } from "react-router-dom";
-// import Edit from "../components/Edit";
+import UserNameEdit from "../Components/UserNameEdit";
 
 const dataAccount = [
   {
@@ -30,8 +30,6 @@ const User = () => {
   const authenticated = useSelector((state) => state.authenticated);
   const token = useSelector((state) => state.token);
   const dispatch = useDispatch();
-  const firstname = useSelector((state) => state.firstname);
-  const lastname = useSelector((state) => state.lastname);
   const username = useSelector((state) => state.username);
 
   useEffect(() => {
@@ -71,13 +69,7 @@ const User = () => {
     <div>
       <Header />
       <main className="main bg-dark">
-        <div className="header">
-          <h1>
-            Welcome back
-            <br />
-            {firstname} {lastname}!
-          </h1>
-        </div>
+        <UserNameEdit />
         <h2 className="sr-only">Accounts</h2>
         {dataAccount.map((data, id) => (
           <Account

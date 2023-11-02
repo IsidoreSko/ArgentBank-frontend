@@ -1,7 +1,7 @@
 import React from "react";
-import iconChat from "../Assets/Images/icon-chat.png";
-import iconMoney from "../Assets/Images/icon-money.png";
-import iconSecurity from "../Assets/Images/icon-security.png";
+import iconChat from "../Assets/Images/icon-chat.webp";
+import iconMoney from "../Assets/Images/icon-money.webp";
+import iconSecurity from "../Assets/Images/icon-security.webp";
 
 const featuresData = [
   {

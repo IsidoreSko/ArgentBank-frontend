@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-//, useSelector
 import Header from "../Layout/Header";
-import iconError from "../Assets/Images/icon-error-form.jpg";
 
-const Signin = () => {
+const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const authenticated = useSelector((state) => state.user.authenticated);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +39,6 @@ const Signin = () => {
         type: "LOGIN",
         payload: { token: data.body.token },
       });
-      // console.log(data.body.token);
       navigate("/User");
     } catch (error) {
       console.error("Login failed:", error);
@@ -56,7 +52,7 @@ const Signin = () => {
       <main className="main bg-dark">
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
-          <h1>Sign In</h1>
+          <h1>Login</h1>
           <form>
             <div className="input-wrapper">
               <label htmlFor="email">Email</label>
@@ -65,6 +61,7 @@ const Signin = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
             <div className="input-wrapper">
@@ -81,16 +78,11 @@ const Signin = () => {
               <label htmlFor="remember-me">Remember me</label>
             </div>
             <button type="button" className="sign-in-button" onClick={forLogin}>
-              Sign In
+              Login
             </button>
           </form>
           {errorMessage && (
             <div>
-              <img
-                className="icon-error"
-                src={iconError}
-                alt="Logo Argent Bank"
-              />
               <div className="form-error-message">{errorMessage}</div>
             </div>
           )}
@@ -100,4 +92,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Login;

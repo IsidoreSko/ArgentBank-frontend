@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import logo from "../Assets/Images/argentBankLogo.png";
+import logo from "../Assets/Images/argentBankLogo.webp";
 
 function Header() {
   const authenticated = useSelector((state) => state.authenticated);
@@ -21,25 +21,21 @@ function Header() {
           className="main-nav-logo-image"
           src={logo}
           alt="Logo Argent Bank"
-          // Ajout d'une info-bulle:
-          title="Back to the homepage"
         />
       </Link>
       <div>
         {authenticated ? (
           <>
-            <Link className="main-nav-item" to="/">
-              <i className="fa fa-user-circle"> {username}</i>
-            </Link>
+            <i className="fa fa-user-circle"> {username}</i>
             <Link className="main-nav-item" to="/" onClick={forLogout}>
               <i className="fa-solid fa-right-from-bracket"></i>
               Logout
             </Link>
           </>
         ) : (
-          <Link className="main-nav-item" to="./SignIn">
+          <Link className="main-nav-item" to="./Login">
             <i className="fa fa-user-circle"></i>
-            Sign In
+            Login
           </Link>
         )}
       </div>
