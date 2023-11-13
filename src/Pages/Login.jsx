@@ -32,20 +32,19 @@ const Login = () => {
       if (!response.ok) {
         throw new Error("Login failed");
       }
-
       const data = await response.json();
 
       dispatch({
         type: "LOGIN",
         payload: { token: data.body.token },
       });
+
       navigate("/User");
     } catch (error) {
       console.error("Login failed:", error);
       setErrorMessage("Connection error please try again");
     }
   };
-
   return (
     <div>
       <Header />

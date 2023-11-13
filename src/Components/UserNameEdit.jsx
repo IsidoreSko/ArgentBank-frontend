@@ -13,7 +13,7 @@ function UserNameEdit() {
   const lastname = useSelector((state) => state.lastname);
   const username = useSelector((state) => state.username);
 
-  const handleSubmit = async (event) => {
+  const UserNameChange = async (event) => {
     event.preventDefault();
 
     try {
@@ -38,6 +38,7 @@ function UserNameEdit() {
             lastname: lastname,
           },
         });
+
         setNewUsername("");
       } else {
         console.error("Error");
@@ -52,7 +53,9 @@ function UserNameEdit() {
       {showForm ? (
         <div>
           <h2>Edit User info</h2>
-          <form onSubmit={handleSubmit}>
+          <form
+          // onSubmit={UserNameChange}
+          >
             <div className="input-edit">
               <label htmlFor="username">Username : </label>
               <input
@@ -83,7 +86,13 @@ function UserNameEdit() {
                 disabled
               />
             </div>
-            <button className="edit-button edit-button-username" type="submit">
+            <button
+              className="edit-button edit-button-username"
+              type="submit"
+              onClick={UserNameChange}
+              // onClick="UserNameChange() ; setShowForm(false)"
+              // onClick={() => setShowForm()}
+            >
               Save
             </button>
             <button
@@ -106,7 +115,7 @@ function UserNameEdit() {
             onClick={() => setShowForm(true)}
           >
             <img src={iconParam} className="icon-param" alt="icone paramètre" />
-            Change your user name
+            Change your username
           </button>
         </>
       )}

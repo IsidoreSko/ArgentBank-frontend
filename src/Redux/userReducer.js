@@ -1,8 +1,10 @@
+// "state" initial:
 const initialState = {
   authenticated: false,
   token: null,
 };
 
+// "reducer":
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case "LOGIN":

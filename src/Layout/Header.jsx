@@ -26,7 +26,9 @@ function Header() {
       <div>
         {authenticated ? (
           <>
-            <i className="fa fa-user-circle"> {username}</i>
+            <Link className="main-nav-item" to="/User">
+              <i className="fa fa-user-circle"> {username}</i>
+            </Link>
             <Link className="main-nav-item" to="/" onClick={forLogout}>
               <i className="fa-solid fa-right-from-bracket"></i>
               Logout

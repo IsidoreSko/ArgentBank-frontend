@@ -1,5 +1,3 @@
-import "./Style/main.css";
-
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -7,12 +5,15 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import HomePage from "./Pages/HomePage";
 import Login from "./Pages/Login";
 import Error from "./Pages/Error";
 import User from "./Pages/User";
 import Footer from "./Layout/Footer";
-import { useSelector } from "react-redux";
+
+import "./Style/main.css";
 
 function App() {
   const token = useSelector((state) => state.token);
