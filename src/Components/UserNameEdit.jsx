@@ -6,9 +6,9 @@ import iconParam from "../Assets/Images/icon-param.webp";
 function UserNameEdit() {
   const [newUsername, setNewUsername] = useState("");
   const [showForm, setShowForm] = useState(false);
-  const token = useSelector((state) => state.token);
   const dispatch = useDispatch();
 
+  const token = useSelector((state) => state.token);
   const firstname = useSelector((state) => state.firstname);
   const lastname = useSelector((state) => state.lastname);
   const username = useSelector((state) => state.username);
@@ -17,6 +17,7 @@ function UserNameEdit() {
     event.preventDefault();
 
     try {
+      // Requête Fetch (PUT):
       const response = await fetch(
         "http://localhost:3001/api/v1/user/profile",
         {
@@ -28,7 +29,7 @@ function UserNameEdit() {
           body: JSON.stringify({ userName: newUsername }),
         }
       );
-
+      // Récupération de l'action USER_PROFILE:
       if (response.ok) {
         dispatch({
           type: "USER_PROFILE",
@@ -53,9 +54,7 @@ function UserNameEdit() {
       {showForm ? (
         <div>
           <h2>Edit User info</h2>
-          <form
-          // onSubmit={UserNameChange}
-          >
+          <form>
             <div className="input-edit">
               <label htmlFor="username">Username : </label>
               <input
@@ -90,8 +89,6 @@ function UserNameEdit() {
               className="edit-button edit-button-username"
               type="submit"
               onClick={UserNameChange}
-              // onClick="UserNameChange() ; setShowForm(false)"
-              // onClick={() => setShowForm()}
             >
               Save
             </button>
@@ -109,7 +106,6 @@ function UserNameEdit() {
             Welcome back <br />
             {username}!
           </h1>
-
           <button
             className="edit-button button-change"
             onClick={() => setShowForm(true)}

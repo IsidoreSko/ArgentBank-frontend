@@ -7,20 +7,21 @@ const initialState = {
 // "reducer":
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
+    // Action LOGIN:
     case "LOGIN":
       return {
         ...state,
         authenticated: true,
         token: action.payload.token,
       };
-
+    // Action LOGOUT:
     case "LOGOUT":
       return {
         ...state,
         authenticated: false,
         token: null,
       };
-
+    // Action USER_NAME:
     case "USER_PROFILE":
       return {
         ...state,

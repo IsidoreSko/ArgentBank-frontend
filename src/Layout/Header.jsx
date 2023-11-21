@@ -9,6 +9,7 @@ function Header() {
   const dispatch = useDispatch();
 
   const forLogout = () => {
+    // Récupération de l'action LOGOUT:
     dispatch({
       type: "LOGOUT",
     });

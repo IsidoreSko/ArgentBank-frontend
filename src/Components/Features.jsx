@@ -3,6 +3,7 @@ import iconChat from "../Assets/Images/icon-chat.webp";
 import iconMoney from "../Assets/Images/icon-money.webp";
 import iconSecurity from "../Assets/Images/icon-security.webp";
 
+// Données pour les différentes fonctionnalités:
 const featuresData = [
   {
     id: "1",

@@ -5,6 +5,7 @@ import Header from "../Layout/Header";
 import { useSelector, useDispatch } from "react-redux";
 import UserNameEdit from "../Components/UserNameEdit";
 
+// Données des différents comptes:
 const dataAccount = [
   {
     id: "1",
@@ -29,13 +30,14 @@ const dataAccount = [
 const User = () => {
   const authenticated = useSelector((state) => state.authenticated);
   const token = useSelector((state) => state.token);
-  const dispatch = useDispatch();
   const username = useSelector((state) => state.username);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (authenticated) {
       const fetchData = async () => {
         try {
+          // Requête Fetch (POST):
           const response = await fetch(
             "http://localhost:3001/api/v1/user/profile",
             {
@@ -48,6 +50,7 @@ const User = () => {
           );
           if (response.ok) {
             const data = await response.json();
+            // Récupération de l'action USER_PROFILE:
             dispatch({
               type: "USER_PROFILE",
               payload: {

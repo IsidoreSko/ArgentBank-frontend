@@ -21,11 +21,13 @@ const Login = () => {
       return;
     }
     try {
+      // Requête Fetch (POST):
       const response = await fetch("http://localhost:3001/api/v1/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+
         body: JSON.stringify({ email, password }),
       });
 
@@ -33,7 +35,7 @@ const Login = () => {
         throw new Error("Login failed");
       }
       const data = await response.json();
-
+      // Récupération de l'action LOGIN:
       dispatch({
         type: "LOGIN",
         payload: { token: data.body.token },
@@ -45,6 +47,7 @@ const Login = () => {
       setErrorMessage("Connection error please try again");
     }
   };
+
   return (
     <div>
       <Header />
