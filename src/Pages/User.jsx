@@ -37,7 +37,7 @@ const User = () => {
     if (authenticated) {
       const fetchData = async () => {
         try {
-          // Requête Fetch (POST):
+          // Requête Fetch (POST):                Authorization: `Bearer ${token}`,
           const response = await fetch(
             "http://localhost:3001/api/v1/user/profile",
             {
